@@ -5,8 +5,11 @@
 function addPlaylist( mixtape,  change )
 {
   
+   var newId = mixtape.playlists[mixtape.playlists.length-1].id;
+   newId++;
+   newId = newId.toString();
    var newPlaylist = {
-     id : mixtape.playlists.length+1,
+     id : newId,
      user_id : change.playlist.user_id,
      song_ids: change.playlist.song_ids
    }
@@ -26,13 +29,10 @@ function removePlaylist( mixtape, change )
         console.log( "Playlist with id '"+change.playlistId+"' does not exists");
         return;
     }
- 
-    var idx = parseInt( change.playlistId, 10);
-    var x = mixtape.playlists.splice(idx-1,1);
-    for( var x = idx -1; x < mixtape.playlists.length; x++ )
-    {
-        mixtape.playlists[x].id=x+1;
-    }
+    var numId = parseInt(change.playlistId, 10); 
+    var newlist = mixtape.playlists.filter( el => el.id !== change.playlistId);
+    mixtape.playlists = newlist;
+    
     
 }
 
@@ -114,5 +114,5 @@ changes.forEach(function(change)
     }
 });
 
-console.log( JSON.stringify(mixtape,null,4) );
+console.log( JSON.stringify(mixtape.playlists,null,4) );
 
