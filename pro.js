@@ -44,20 +44,14 @@ function removePlaylist( mixtape, change )
 function addSongToPlaylist( mixtape, change )
 {
 
-    if ( change.playlistId > mixtape.playlists.length )
+    var idx = mixtape.playlists.findIndex((el) => el.id === change.playlistId)
+    if ( idx === -1 )
     {
         console.log( "Playlist with id '"+change.playlistId+"' does not exists");
         return;
     }
 
-    if ( change.songId > mixtape.songs.length )
-    {
-        console.log( "Song with id '"+change.songId+"' does not exists");
-        return;
-    }
-    
-
-    mixtape.playlists[change.playlistId-1].song_ids.push(change.songId);
+    mixtape.playlists[idx].song_ids.push(change.songId);
 
 }
 
