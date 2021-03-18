@@ -1,0 +1,38 @@
+[
+	{
+		"action": "addPlaylist",
+		"playlist": 
+		 {
+		  "user_id" : "3",
+		  "song_ids" : [
+			"9",
+			"31"
+		  ]
+		}
+	},
+	{
+		"action": "addPlaylist",
+		"playlist": 
+		 {
+		  "user_id" : "3",
+		  "song_ids" : [
+			"10",
+			"32"
+		  ]
+		}
+	},
+	{
+		"action": "removePlaylist",
+		"playlistId": "4"
+	},
+	{
+		"action" : "addSongToPlaylist",
+		"playlistId": "2",
+		"songId": "5"
+	},
+	{
+		"action" : "addSongToPlaylist",
+		"playlistId": "4",
+		"songId": "5"
+	}
+]
