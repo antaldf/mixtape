@@ -114,5 +114,5 @@ changes.forEach(function(change)
     }
 });
 
-console.log( JSON.stringify(mixtape.playlists,null,4) );
+console.log( JSON.stringify(mixtape,null,4) );
 
