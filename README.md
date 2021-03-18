@@ -1,5 +1,5 @@
 # mixtape
-Mixtape exercise, This program assumes that the changes are in the following order, playlist adds, playlist deletes then song adds.
+Mixtape exercise,
 
 This is a simple node.js program. Run this program as follows:
 
